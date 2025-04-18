@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>استكمال بيانات المدرب | منصة مكني</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Tajawal:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="instructor-profile-completion.css" />
+  </head>
+  <body>
+    <div class="completion-container">
+      <div class="completion-header">
+        <img src="assets/logo.png" alt="منصة مكني" class="logo" />
+        <h1>استكمال بيانات المدرب</h1>
+        <p class="welcome-text">
+          مرحباً بك في منصة مكني! يرجى استكمال بياناتك للمتابعة
+        </p>
+      </div>
+
+      <div class="completion-content">
+        <div class="progress-container">
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 0%"></div>
+          </div>
+          <div class="progress-steps">
+            <div class="step active" data-step="1">
+              <div class="step-number">1</div>
+              <div class="step-label">المعلومات الشخصية</div>
+            </div>
+            <div class="step" data-step="2">
+              <div class="step-number">2</div>
+              <div class="step-label">المؤهلات والخبرات</div>
+            </div>
+            <div class="step" data-step="3">
+              <div class="step-number">3</div>
+              <div class="step-label">الصورة الشخصية</div>
+            </div>
+            <div class="step" data-step="4">
+              <div class="step-number">4</div>
+              <div class="step-label">التأكيد</div>
+            </div>
+          </div>
+        </div>
+
+        <form id="profileCompletionForm">
+          <!-- Step 1: Personal Information -->
+          <div class="form-step" data-step="1">
+            <h2 class="step-title">المعلومات الشخصية</h2>
+
+            <div class="form-group">
+              <label for="fullName"
+                >الاسم الكامل <span class="required">*</span></label
+              >
+              <input type="text" id="fullName" name="fullName" required />
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="phone"
+                  >رقم الهاتف <span class="required">*</span></label
+                >
+                <input type="tel" id="phone" name="phone" required />
+              </div>
+
+              <div class="form-group">
+                <label for="gender"
+                  >الجنس <span class="required">*</span></label
+                >
+                <select id="gender" name="gender" required>
+                  <option value="">اختر الجنس</option>
+                  <option value="male">ذكر</option>
+                  <option value="female">أنثى</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="bio"
+                >نبذة تعريفية <span class="required">*</span></label
+              >
+              <textarea id="bio" name="bio" rows="4" required></textarea>
+              <p class="help-text">
+                اكتب نبذة مختصرة عن نفسك (500 حرف كحد أقصى)
+              </p>
+            </div>
+
+            <div class="form-section">
+              <h3 class="section-title">روابط التواصل الاجتماعي</h3>
+
+              <div class="form-group social-input">
+                <i class="fab fa-linkedin"></i>
+                <input
+                  type="url"
+                  id="linkedinUrl"
+                  name="linkedin"
+                  placeholder="رابط LinkedIn"
+                />
+              </div>
+
+              <div class="form-group social-input">
+                <i class="fab fa-twitter"></i>
+                <input
+                  type="url"
+                  id="twitterUrl"
+                  name="twitter"
+                  placeholder="رابط Twitter"
+                />
+              </div>
+
+              <div class="form-group social-input">
+                <i class="fab fa-facebook"></i>
+                <input
+                  type="url"
+                  id="facebookUrl"
+                  name="facebook"
+                  placeholder="رابط Facebook"
+                />
+              </div>
+
+              <div class="form-group social-input">
+                <i class="fab fa-github"></i>
+                <input
+                  type="url"
+                  id="githubUrl"
+                  name="github"
+                  placeholder="رابط GitHub"
+                />
+              </div>
+            </div>
+
+            <div class="form-actions">
+              <button type="button" class="next-btn">
+                التالي <i class="fas fa-arrow-left"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Step 2: Qualifications and Experience -->
+          <div class="form-step" data-step="2" style="">
+            <h2 class="step-title">المؤهلات والخبرات</h2>
+
+            <div class="form-group">
+              <label for="specialty"
+                >التخصص الرئيسي <span class="required">*</span></label
+              >
+              <select id="specialty" name="specialty" required>
+                <option value="">اختر التخصص</option>
+                <option value="programming">البرمجة</option>
+                <option value="design">التصميم</option>
+                <option value="marketing">التسويق</option>
+                <option value="business">إدارة الأعمال</option>
+                <option value="languages">اللغات</option>
+                <option value="other">أخرى</option>
+              </select>
+            </div>
+
+            <div
+              class="form-group"
+              id="otherSpecialtyGroup"
+              style="display: none"
+            >
+              <label for="otherSpecialty"
+                >حدد التخصص <span class="required">*</span></label
+              >
+              <input type="text" id="otherSpecialty" name="otherSpecialty" />
+            </div>
+
+            <div class="form-group">
+              <label for="education"
+                >المؤهل العلمي <span class="required">*</span></label
+              >
+              <select id="education" name="education" required>
+                <option value="">اختر المؤهل</option>
+                <option value="bachelor">بكالوريوس</option>
+                <option value="master">ماجستير</option>
+                <option value="phd">دكتوراه</option>
+                <option value="diploma">دبلوم</option>
+                <option value="other">أخرى</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="experience"
+                >سنوات الخبرة <span class="required">*</span></label
+              >
+              <select id="experience" name="experience" required>
+                <option value="">اختر سنوات الخبرة</option>
+                <option value="1-3">1-3 سنوات</option>
+                <option value="4-6">4-6 سنوات</option>
+                <option value="7-10">7-10 سنوات</option>
+                <option value="10+">أكثر من 10 سنوات</option>
+              </select>
+            </div>
+
+            <div class="form-section">
+              <h3 class="section-title">المهارات</h3>
+              <div class="skills-container">
+                <div class="skills-input-group">
+                  <input
+                    type="text"
+                    id="skillInput"
+                    placeholder="أضف مهارة جديدة..."
+                  />
+                  <button type="button" id="addSkillBtn" class="add-btn">
+                    <i class="fas fa-plus"></i>
+                  </button>
+                </div>
+                <div id="skillsContainer" class="skills-list"></div>
+                <p class="help-text">
+                  أضف المهارات التي تتقنها (على الأقل 3 مهارات)
+                </p>
+              </div>
+            </div>
+
+            <div class="form-actions">
+              <button type="button" class="prev-btn">
+                <i class="fas fa-arrow-right"></i> السابق
+              </button>
+              <button type="button" class="next-btn">
+                التالي <i class="fas fa-arrow-left"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Step 3: Profile Photo -->
+          <div class="form-step" data-step="3" style="">
+            <h2 class="step-title">الصورة الشخصية</h2>
+
+            <div class="photo-upload-container">
+              <div class="photo-preview">
+                <img
+                  id="photoPreview"
+                  src="assets/default-avatar.png"
+                  alt="الصورة الشخصية"
+                />
+              </div>
+
+              <div class="upload-actions">
+                <p class="upload-instructions">قم بتحميل صورة شخصية واضحة</p>
+                <label for="photoUpload" class="upload-btn">
+                  <i class="fas fa-upload"></i> اختر صورة
+                </label>
+                <input
+                  type="file"
+                  id="photoUpload"
+                  name="photo"
+                  accept="image/*"
+                  hidden
+                />
+                <p class="help-text">
+                  الصيغ المدعومة: JPG, PNG. الحجم الأقصى: 5MB
+                </p>
+              </div>
+            </div>
+
+            <div class="photo-guidelines">
+              <h3>إرشادات الصورة الشخصية:</h3>
+              <ul>
+                <li>يجب أن تكون الصورة واضحة وحديثة</li>
+                <li>يفضل أن تكون الصورة بخلفية محايدة</li>
+                <li>يجب أن يظهر الوجه بشكل واضح</li>
+                <li>تجنب استخدام صور ذات جودة منخفضة</li>
+              </ul>
+            </div>
+
+            <div class="form-actions">
+              <button type="button" class="prev-btn">
+                <i class="fas fa-arrow-right"></i> السابق
+              </button>
+              <button type="button" class="next-btn">
+                التالي <i class="fas fa-arrow-left"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Step 4: Confirmation -->
+          <div class="form-step" data-step="4" style="">
+            <h2 class="step-title">تأكيد المعلومات</h2>
+
+            <div class="confirmation-message">
+              <i class="fas fa-check-circle"></i>
+              <h3>تم استكمال جميع البيانات المطلوبة</h3>
+              <p>يرجى مراجعة المعلومات قبل الإرسال النهائي</p>
+            </div>
+
+            <div class="confirmation-summary">
+              <div class="summary-section">
+                <h3>المعلومات الشخصية</h3>
+                <div class="summary-item">
+                  <span class="summary-label">الاسم:</span>
+                  <span id="summaryName" class="summary-value"></span>
+                </div>
+                <div class="summary-item">
+                  <span class="summary-label">رقم الهاتف:</span>
+                  <span id="summaryPhone" class="summary-value"></span>
+                </div>
+                <div class="summary-item">
+                  <span class="summary-label">التخصص:</span>
+                  <span id="summarySpecialty" class="summary-value"></span>
+                </div>
+              </div>
+
+              <div class="summary-section">
+                <h3>المهارات</h3>
+                <div id="summarySkills" class="summary-skills"></div>
+              </div>
+
+              <div class="summary-section">
+                <h3>الصورة الشخصية</h3>
+                <div class="summary-photo">
+                  <img
+                    id="summaryPhoto"
+                    src="assets/default-avatar.png"
+                    alt="الصورة الشخصية"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="terms-agreement">
+              <label class="checkbox-container">
+                <input
+                  type="checkbox"
+                  id="termsAgreement"
+                  name="termsAgreement"
+                  required
+                />
+                <span class="checkmark"></span>
+                أوافق على <a href="#" class="terms-link">شروط وأحكام</a> منصة
+                مكني
+              </label>
+            </div>
+
+            <div class="form-actions">
+              <button type="button" class="prev-btn">
+                <i class="fas fa-arrow-right"></i> السابق
+              </button>
+              <button type="submit" class="submit-btn">
+                إرسال <i class="fas fa-check"></i>
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>تم بنجاح!</h2>
+          <span class="close-modal">&times;</span>
+        </div>
+        <div class="modal-body">
+          <div class="success-message">
+            <i class="fas fa-check-circle"></i>
+            <h3>تم استكمال بياناتك بنجاح</h3>
+            <p>
+              سيتم مراجعة بياناتك من قبل إدارة المنصة وسيتم إشعارك عند الموافقة
+            </p>
+          </div>
+          <div class="modal-actions">
+            <a href="instructor-dashboard.html" class="primary-btn"
+              >الانتقال إلى لوحة التحكم</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="instructor-profile-completion.js"></script>
+  </body>
+</html>
